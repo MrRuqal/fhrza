@@ -10,7 +10,7 @@ import time,random,sys,json,codecs,threading,glob,re
 #kk.loginResult()
 
 cl = LINETCR.LINE()
-cl.login(token="EmTRmVBPBbl39FGUGeK5.m/sdLwvBmSX0D150uHg+1q.2bBWTySxT0igFAk3HX/fZsp9MzD9JJL3Fh77VwlO+xE=")
+cl.login(token="Emq3XBoS52nByOHyPe1f.ReKXV+j5iqZ6yukPyRKWdW.gC7Mk3h3XIFdXx+UjS6MOEhiYPVMLqI6blDb4Pb/Uxg=")
 cl.loginResult()
 
 ki = LINETCR.LINE()
@@ -18,7 +18,7 @@ ki.login(token="Emz7mr2IlavTlJuylHea.X7b/CxbpMJa0Jq6Q+4YZwG.ZOTGk291s5X7NZh9UhvR
 ki.loginResult()
 
 kk = LINETCR.LINE()
-kk.login(token="Emq3XBoS52nByOHyPe1f.ReKXV+j5iqZ6yukPyRKWdW.gC7Mk3h3XIFdXx+UjS6MOEhiYPVMLqI6blDb4Pb/Uxg=")
+kk.login(token="EmTRmVBPBbl39FGUGeK5.m/sdLwvBmSX0D150uHg+1q.2bBWTySxT0igFAk3HX/fZsp9MzD9JJL3Fh77VwlO+xE=")
 kk.loginResult()
 
 kc = LINETCR.LINE()
@@ -118,13 +118,13 @@ wait = {
     "wblack":False,
     "dblack":False,
     "clock":True,
-    "cName":"Number 1",
-    "cName2":"Number 2",
-    "cName3":"Number 3",
-    "cName4":"Number 4",
-    "cName5":"Number 5",
-    "cName6":"Number 6",
-    "cName7":"Number 7",
+    "cName":"Ruqal",
+    "cName2":"Dave",
+    "cName3":"Lemon",
+    "cName4":"Mr.αℓєχ",
+    "cName5":"YᎾᏌ ᏞᎾᏚᎢ",
+    "cName6":"ʍɾ.մηƘ",
+    "cName7":"ςƘψ αςς",
     "blacklist":{},
     "wblacklist":False,
     "dblacklist":False,
@@ -669,6 +669,7 @@ def bot(op):
                 else:
                     cl.sendText(msg.to,Set)
             elif ("Gn " in msg.text):
+            	if msg.from_ in admin:
                 if msg.toType == 2:
                     X = cl.getGroup(msg.to)
                     X.name = msg.text.replace("Gn ","")
@@ -833,6 +834,7 @@ def bot(op):
                 #print cl.getGroup(msg.to)
                 ##cl.sendMessage(msg)
             elif msg.text in ["Open url","open url"]:
+            	if msg.from_ in admin:
                 if msg.toType == 2:
                     X = cl.getGroup(msg.to)
                     X.preventJoinByTicket = False
@@ -889,6 +891,7 @@ def bot(op):
                     else:
                         kc.sendText(msg.to,"Not for use less than group")
             elif msg.text in ["Close url","close url"]:
+            	if msg.from_ in admin:
                 if msg.toType == 2:
                     X = cl.getGroup(msg.to)
                     X.preventJoinByTicket = True
@@ -1174,24 +1177,24 @@ def bot(op):
                 if len(string.decode('utf-8')) <= 60000000:
                     profile = ki2.getProfile()
                     profile.displayName = string
-                    ki2.updateProfile(profile)
-                    ki2.sendText(msg.to,"􀜁􀇔􏿿Update Names👉" + string + "👈")
+                    kk.updateProfile(profile)
+                    kk.sendText(msg.to,"􀜁􀇔􏿿Update Names👉" + string + "👈")
 #--------------------------------------------------------
             elif "3name:" in msg.text:
                 string = msg.text.replace("3name:","")
                 if len(string.decode('utf-8')) <= 60000000:
                     profile = ki3.getProfile()
                     profile.displayName = string
-                    ki3.updateProfile(profile)
-                    ki3.sendText(msg.to,"􀜁􀇔􏿿Update Names👉" + string + "👈")
+                    kc.updateProfile(profile)
+                    kc.sendText(msg.to,"􀜁􀇔􏿿Update Names👉" + string + "👈")
 #--------------------------------------------------------
             elif "4name:" in msg.text:
                 string = msg.text.replace("4name:","")
                 if len(string.decode('utf-8')) <= 60000000:
                     profile = ki4.getProfile()
                     profile.displayName = string
-                    ki4.updateProfile(profile)
-                    ki4.sendText(msg.to,"􀜁􀇔􏿿Update Names👉" + string + "👈")
+                    ks.updateProfile(profile)
+                    ks.sendText(msg.to,"􀜁􀇔􏿿Update Names👉" + string + "👈")
             elif "Mybio:" in msg.text:
                 string = msg.text.replace("Mybio:","")
                 if len(string.decode('utf-8')) <= 60000000000:
@@ -1205,16 +1208,16 @@ def bot(op):
                 if len(string.decode('utf-8')) <= 60000000:
                     profile = ki5.getProfile()
                     profile.displayName = string
-                    ki5.updateProfile(profile)
-                    ki5.sendText(msg.to,"􀜁􀇔􏿿Update Names👉" + string + "👈")
+                    ka.updateProfile(profile)
+                    ka.sendText(msg.to,"􀜁􀇔􏿿Update Names👉" + string + "👈")
 #--------------------------------------------------------
             elif "6name:" in msg.text:
                 string = msg.text.replace("6name:","")
                 if len(string.decode('utf-8')) <= 60000000:
                     profile = ki6.getProfile()
                     profile.displayName = string
-                    ki6.updateProfile(profile)
-                    ki6.sendText(msg.to,"􀜁􀇔􏿿Update Names👉" + string + "👈")
+                    kb.updateProfile(profile)
+                    kb.sendText(msg.to,"􀜁􀇔􏿿Update Names👉" + string + "👈")
 #--------------------------------------------------------
             elif msg.text in ["Mc "]:
                 mmid = msg.text.replace("Mc ","")
@@ -1326,6 +1329,7 @@ def bot(op):
                     else:
                         cl.sendText(msg.to,"done")
             elif msg.text in ["è‡ªå‹•å�‚åŠ :ã‚ªãƒ³","Join on","Auto join:on","è‡ªå‹•å�ƒåŠ ï¼šé–‹"]:
+            	if msg.from_ in admin:
                 if wait["autoJoin"] == True:
                     if wait["lang"] == "JP":
                         cl.sendText(msg.to,"already on")
@@ -1338,6 +1342,7 @@ def bot(op):
                     else:
                         cl.sendText(msg.to,"done")
             elif msg.text in ["è‡ªå‹•å�‚åŠ :ã‚ªãƒ•","Join off","Auto join:off","è‡ªå‹•å�ƒåŠ ï¼šé—œ"]:
+            	if msg.from_ in admin:
                 if wait["autoJoin"] == False:
                     if wait["lang"] == "JP":
                         cl.sendText(msg.to,"already off")
@@ -1418,7 +1423,38 @@ def bot(op):
                         cl.sendText(msg.to,"done")
                     else:
                         cl.sendText(msg.to,"è¦�äº†å…³æ–­ã€‚")
-            elif msg.text in ["Set View"]:
+            elif "Message set:" in msg.text:
+                wait["message"] = msg.text.replace("Message set:","")
+                cl.sendText(msg.to,"We changed the message👈")
+            elif "Help set:" in msg.text:
+                wait["help"] = msg.text.replace("Help set:","")
+                cl.sendText(msg.to,"We changed the Help👈")
+            elif "Pesan add-" in msg.text:
+                wait["message"] = msg.text.replace("Pesan add-","")
+                if wait["lang"] == "JP":
+                    cl.sendText(msg.to,"Kami mengubah pesan🛡")
+                else:
+                    cl.sendText(msg.to,"Change information")
+            elif msg.text in ["Pesan add cek","Message Confirmation"]:
+                if wait["lang"] == "JP":
+                    cl.sendText(msg.to,"Additional information is automatically set to the following \n\n" + wait["message"])
+                else:
+                    cl.sendText(msg.to,"Pesan tambahan otomatis telah ditetapkan sebagai berikut \n\n" + wait["message"])
+            elif msg.text in ["Change","change"]:
+                if wait["lang"] =="JP":
+                    wait["lang"] = "TW"
+                    cl.sendText(msg.to,"I changed the language to engglis👈")
+                else:
+                    wait["lang"] = "JP"
+                    cl.sendText(msg.to,"I changed the language to indonesia👈")
+            elif "Message set" in msg.text:
+                c = msg.text.replace("Message set","")
+                if c in [""," ","\n",None]:
+                    cl.sendText(msg.to,"Is a string that can not be changed👈")
+                else:
+                    wait["comment"] = c
+                    cl.sendText(msg.to,"This has been changed👈\n\n" + c)
+            elif msg.text in ["Lihat"]:
                 md = ""
                 if wait["Protectjoin"] == True: md+="􀔃􀆑lock􏿿  Block Join\n"
                 else: md+=" Block Join Off\n"
@@ -1689,6 +1725,34 @@ def bot(op):
                 else:
                     wait["cName"] = n
                     cl.sendText(msg.to,"changed to\n\n" + n)
+                    #-----------------------------------------------
+            elif "Copy @" in msg.text:
+                print "[Copy] OK"
+                _name = msg.text.replace("Copy @","")
+                _nametarget = _name.rstrip(' ')
+                gs = cl.getGroup(msg.to)
+                targets = []
+                for g in gs.members:
+                    if _nametarget == g.displayName:
+                        targets.append(g.mid)
+                if targets == []:
+                    sendMessage(msg.to, "Not Found...")
+                else:
+                    for target in targets:
+                        try:
+                            cl.CloneContactProfile(target)
+                            cl.sendText(msg.to, "Success Copy profile ~")
+                        except Exception as e:
+                            print e
+
+            elif msg.text in ["Backup","backup"]:
+                try:
+                    cl.updateDisplayPicture(backup.pictureStatus)
+                    cl.updateProfile(backup)
+                    cl.sendMessage(msg.to, "Backup done")
+                except Exception as e:
+                    cl.sendMessage(msg.to, str(e))
+#----------------------------------------------------
                     #-------------Fungsi Jam on/off Finish-------------------#           
             elif msg.from_ in mimic["target"] and mimic["status"] == True and mimic["target"][msg.from_] == True:
              text = msg.text
