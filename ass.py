@@ -1757,6 +1757,9 @@ def bot(op):
                 cl.sendText(msg.to,jawaban)
 #end
 #by zado
+            elif msg.text in ["kick","fuck","admin"]:
+      try:
+           cl.kickoutFromGroup(op.param1,[op.param2])
 #----------------------------------------------------
             elif 'Lyric' in msg.text.lower():
                 songname=msg.text.lower().replace('Lyric','')
@@ -2669,15 +2672,25 @@ def bot(op):
                 ki.sendText(msg.to,"Ya gitu deh intinya mah 􀨁􀅴questioning􏿿")
 
       #-------------Fungsi Balesan Respon Finish---------------------#
-#-------------Fungsi Speedbot Finish---------------------#
-            elif msg.text in ["Bot Like", "Bot like"]:
-                if msg.from_ in staff:
-                    print "[Command]Like executed"
-                    cl.sendText(msg.to,"Trying to Like post(s) from staff")
-                    try:
-                        likePost()
-                    except:
-                        pass
+    #-------------Fungsi Tag All Finish---------------#
+            elif msg.text in ["Bot Like", "Bot like"]: #Semua Bot Ngelike Status Akun Utama
+              if msg.from_ in admin:
+                print "[Command]Like executed"
+                cl.sendText(msg.to,"Kami Siap Like Status Owner")
+                try:
+                  likePost()
+                except:
+                  pass
+                
+            elif msg.text in ["Like temen", "Bot like temen"]: #Semua Bot Ngelike Status Teman
+              if msg.from_ in admin:
+                print "[Command]Like executed"
+                cl.sendText(msg.to,"Kami Siap Like Status Teman Boss")
+                try:
+                  autolike()
+                except:
+                  pass
+        #----------------Fungsi Banned Kick Target Start-----------------------#
        #-------------Fungsi Speedbot Start---------------------#
             elif msg.text in ["Sp","Speedbot","speedbot"]:
                 start = time.time()
@@ -2856,9 +2869,9 @@ thread2.start()
 
 def likePost():
     for zx in range(0,20):
-        hasil = cl.activity(limit=20)
+        hasil = cl.activity(limit=100)
         if hasil['result']['posts'][zx]['postInfo']['liked'] == False:
-            if hasil['result']['posts'][zx]['userInfo']['mid'] in staff:
+            if hasil['result']['posts'][zx]['userInfo']['mid'] in admin:
                 try:    
                     cl.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1002)
                     kk.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1002)
@@ -2877,7 +2890,7 @@ def likePost():
                 
 def autolike():
      for zx in range(0,20):
-        hasil = cl.activity(limit=20)
+        hasil = cl.activity(limit=100)
         if hasil['result']['posts'][zx]['postInfo']['liked'] == False:
           try:    
             cl.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1002)
