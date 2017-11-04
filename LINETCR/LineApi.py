@@ -72,7 +72,7 @@ class LINE:
     profile.statusMessage = contact.statusMessage
     profile.pictureStatus = contact.pictureStatus
     self.updateDisplayPicture(profile.pictureStatus)
-    return self.updateProfile(profile)w
+    return self.updateProfile(profile)
     
   def updateDisplayPicture(self, hash_id):
     return self.Talk.client.updateProfileAttribute(0, 8, hash_id)    
