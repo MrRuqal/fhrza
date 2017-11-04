@@ -1338,7 +1338,6 @@ def bot(op):
                     else:
                         cl.sendText(msg.to,"done")
             elif msg.text in ["è‡ªå‹•å�‚åŠ :ã‚ªãƒ•","Join off","Auto join:off","è‡ªå‹•å�ƒåŠ ï¼šé—œ"]:
-            	if msg.from_ in admin:
                 if wait["autoJoin"] == False:
                     if wait["lang"] == "JP":
                         cl.sendText(msg.to,"already off")
@@ -1748,6 +1747,16 @@ def bot(op):
                     cl.sendMessage(msg.to, "Backup done")
                 except Exception as e:
                     cl.sendMessage(msg.to, str(e))
+                    
+                    #sc Biar kyk kerang ajaib  
+#start
+            elif "Apakah " in msg.text:
+                tanya = msg.text.replace("Apakah ","")
+                jawab = ("Ya","Tidak")
+                jawaban = random.choice(jawab)
+                cl.sendText(msg.to,jawaban)
+#end
+#by zado
 #----------------------------------------------------
             elif 'Lyric' in msg.text.lower():
                 songname=msg.text.lower().replace('Lyric','')
