@@ -669,7 +669,6 @@ def bot(op):
                 else:
                     cl.sendText(msg.to,Set)
             elif ("Gn " in msg.text):
-            	if msg.from_ in admin:
                 if msg.toType == 2:
                     X = cl.getGroup(msg.to)
                     X.name = msg.text.replace("Gn ","")
@@ -834,7 +833,6 @@ def bot(op):
                 #print cl.getGroup(msg.to)
                 ##cl.sendMessage(msg)
             elif msg.text in ["Open url","open url"]:
-            	if msg.from_ in admin:
                 if msg.toType == 2:
                     X = cl.getGroup(msg.to)
                     X.preventJoinByTicket = False
@@ -891,7 +889,6 @@ def bot(op):
                     else:
                         kc.sendText(msg.to,"Not for use less than group")
             elif msg.text in ["Close url","close url"]:
-            	if msg.from_ in admin:
                 if msg.toType == 2:
                     X = cl.getGroup(msg.to)
                     X.preventJoinByTicket = True
@@ -1329,7 +1326,6 @@ def bot(op):
                     else:
                         cl.sendText(msg.to,"done")
             elif msg.text in ["è‡ªå‹•å�‚åŠ :ã‚ªãƒ³","Join on","Auto join:on","è‡ªå‹•å�ƒåŠ ï¼šé–‹"]:
-            	if msg.from_ in admin:
                 if wait["autoJoin"] == True:
                     if wait["lang"] == "JP":
                         cl.sendText(msg.to,"already on")
@@ -1753,6 +1749,15 @@ def bot(op):
                 except Exception as e:
                     cl.sendMessage(msg.to, str(e))
 #----------------------------------------------------
+            elif 'Lyric' in msg.text.lower():
+                songname=msg.text.lower().replace('Lyric','')
+                params={'songname': songname}
+                r=requests.get('https://ide.fdlrcn.com/workspace/yumi-apis/joox?' + urllib.urlencode(params))
+                data=r.text
+                data=json.loads(data)
+                for song in data:
+                    cl.sendText(msg.to, 'Please wait...')
+                    cl.sendText(msg.to, song[0] + '\n\n' + song[5])
                     #-------------Fungsi Jam on/off Finish-------------------#           
             elif msg.from_ in mimic["target"] and mimic["status"] == True and mimic["target"][msg.from_] == True:
              text = msg.text
@@ -2084,6 +2089,7 @@ def bot(op):
                         pass
     #-------------Fungsi Leave Group Finish---------------#
     #-------------Fungsi Tagall User Start---------------#
+    
              #-------------Fungsi Leave Group Finish---------------#
             elif "Admin add @" in msg.text:
                 if msg.from_ in creator:
