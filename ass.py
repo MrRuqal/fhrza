@@ -1755,11 +1755,6 @@ def bot(op):
                 jawab = ("Ya","Tidak")
                 jawaban = random.choice(jawab)
                 cl.sendText(msg.to,jawaban)
-#end
-#by zado
-            elif msg.text in ["kick","fuck","admin"]:
-      try:
-           cl.kickoutFromGroup(op.param1,[op.param2])
 #----------------------------------------------------
             elif 'Lyric' in msg.text.lower():
                 songname=msg.text.lower().replace('Lyric','')
@@ -2559,7 +2554,11 @@ def bot(op):
                             except:
                                 ki.sendText(msg.to,"Error")
            #----------------Fungsi Unbanned User Target Finish-----------------------#
-           
+            elif "Love " in msg.text:
+                tanya = msg.text.replace("Love ","")
+                jawab = ("10%","15%","20%","25%","30%","35%","40%","45%","50%","55%","60%","65%","70%","75%","80%","85%","90%","95%","100%")
+                jawaban = random.choice(jawab)
+                cl.sendText(msg.to,"Besar cinta " + tanya + "adalah" + jawaban)
         #-------------Fungsi Spam Start---------------------#
             elif msg.text in ["Up","up","Up Chat","Up chat","up chat","Upchat","upchat"]:
                 cl.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
